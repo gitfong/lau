@@ -17,7 +17,7 @@ type Author struct {
 
 // LoadInfo load author's information from databases
 func (a *Author) LoadInfo() error {
-	rows, err := db.SqlDB.Query(sqlLoadInfo)
+	rows, err := db.DB.Query(sqlLoadInfo)
 	if err != nil {
 		return err
 	}

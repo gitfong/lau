@@ -17,13 +17,10 @@ func initRouter() *gin.Engine {
 	r.StaticFS("/statics", http.Dir("./statics"))
 	r.StaticFile("/favicon.ico", "./resources/favicon.ico")
 
-	// base
-	r.GET("/", apis.Root)
-	r.GET("/ping", apis.Ping)
-	r.GET("/author", apis.Author)
-
-	// index
+	r.GET("/", apis.Index)
 	r.GET("/index.html", apis.Index)
+
+	r.GET("/author", apis.Author)
 
 	return r
 }

@@ -1,11 +1,16 @@
 package main
 
 import (
+	"log"
+
 	"github.com/gitfong/lau/db"
 )
 
 func main() {
-	defer db.SqlDB.Close()
+	defer db.DB.Close()
 
-	initRouter().Run() // listen and serve on 0.0.0.0:8080
+	err := initRouter().Run(":9090")
+	if err != nil {
+		log.Fatal(err.Error())
+	}
 }

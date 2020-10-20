@@ -8,16 +8,6 @@ import (
 	"github.com/gitfong/lau/models"
 )
 
-// Ping ping
-func Ping(c *gin.Context) {
-	c.String(http.StatusOK, "Pong")
-}
-
-// Root root
-func Root(c *gin.Context) {
-	c.File("./resources/favicon.ico")
-}
-
 // Author get author's info
 func Author(c *gin.Context) {
 	a := models.Author{}
