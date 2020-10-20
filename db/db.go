@@ -102,7 +102,7 @@ func loadMySQLCfg() *MySQLCfg {
 		log.Fatal(err.Error())
 	}
 
-	log.Println("mysql config:", cfg)
+	log.Printf("mysql config: host:%s, port:%d, database:%s", cfg.Host, cfg.Port, cfg.DBName)
 
 	return &cfg
 }
